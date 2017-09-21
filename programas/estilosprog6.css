@@ -1,0 +1,14 @@
+td{
+	background-color: #cac0c0;
+}
+
+th{
+	background: #8faaff;
+}
+
+div
+{
+   display: inline-block;
+   margin-right: 4%;
+   margin-left: 4%;
+}
