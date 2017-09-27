@@ -1,14 +1,3 @@
-<?php
-require_once '../src/app/db/mysql.php';
-require_once '.../src/models/user.php';
-use models\user;
-if(isset($_POST['usuario'])&& isset($_POST['passwd'])){
-    $usuario =$_POST['usuario'];
-    $passwd =$_POST['passwd']
-    $usuario =$_POST['passwd'];
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +7,7 @@ if(isset($_POST['usuario'])&& isset($_POST['passwd'])){
     <title>Document</title>
 </head>
 <body>
-<?php
-   if isset($usuario) && $usuario) {
-       echo "Usuario $usuario ->name puede iniciar seción correctamente";
-   }
-    <div style ="width:300px;">
+<div style ="width:300px;">
     <form action="#" id="loginform" method="post"
 >      <fieldset >
          <legend>Login Form</legend>

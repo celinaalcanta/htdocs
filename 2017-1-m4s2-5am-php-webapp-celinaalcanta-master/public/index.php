@@ -4,7 +4,7 @@ require_once '.../src/models/user.php';
 use models\user;
 if(isset($_POST['usuario'])&& isset($_POST['passwd'])){
     $usuario =$_POST['usuario'];
-    $passwd =$_POST['passwd']
+    $passwd =$_POST['passwd'];
     $usuario =$_POST['passwd'];
 }
 ?>

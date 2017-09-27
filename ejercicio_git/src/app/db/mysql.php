@@ -17,3 +17,5 @@ class conexion extends mysqli {
        var_dump($this->port);
     }
 }
+insert into users (name, lastname, email, password) values
+('Kenia','Alcantar','celina7@gmail.com','5367476');
