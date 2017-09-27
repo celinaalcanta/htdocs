@@ -142,38 +142,38 @@ public static function create($name,$firstname,$lastname,$email,$passwd)
              }
             
              public static function Delete($id) {
-                 $cnn = new MySQL();
-                 $sql = sprintf("DELETE FROM users WHERE id=%d",$id);
-                 $rst = $cnn->query($sql);
-                 $cnn->close();
-
-                 if (!$rst) {
-                     die("Error en la consulta: $sql");
-                 }
-             }
-             public function Update(){
                 $cnn = new MySQL();
-                $sql = sprintf("UPDATE users SET firstname='%s',lastname='%s' WHERE id=%d",$this->firstname,$this->lastname,$this->id);
+                $sql = sprintf("DELETE FROM users WHERE id=%d",$id);
                 $rst = $cnn->query($sql);
                 $cnn->close();
 
                 if (!$rst) {
                     die("Error en la consulta: $sql");
-                } else{
-                    return $rst;
                 }
-             }
-             public function ChangePassword($password){
-                $cnn = new MySQL();
-                $sql = sprintf("UPDATE users SET password=sha('%s') WHERE id=%d",$password,$this->id);
-                $rst = $cnn->query($sql);
-                $cnn->close();
+            }
+            public function Update(){
+               $cnn = new MySQL();
+               $sql = sprintf("UPDATE users SET firstname='%s',lastname='%s' WHERE id=%d",$this->firstname,$this->lastname,$this->id);
+               $rst = $cnn->query($sql);
+               $cnn->close();
 
-                if (!$rst) {
-                    die("Error en la consulta: $sql");
-                } else{
-                    return $rst;
-                }
-             }
+               if (!$rst) {
+                   die("Error en la consulta: $sql");
+               } else{
+                   return $rst;
+               }
+            }
+            public function ChangePassword($password){
+               $cnn = new MySQL();
+               $sql = sprintf("UPDATE users SET password=sha('%s') WHERE id=%d",$password,$this->id);
+               $rst = $cnn->query($sql);
+               $cnn->close();
+
+               if (!$rst) {
+                   die("Error en la consulta: $sql");
+               } else{
+                   return $rst;
+               }
+            }
     
 }
