@@ -65,57 +65,57 @@ class User {
     }
 }   
             
-        public static function create($name,$firstname,$lastname,$email,$passwd) 
-            {
-                if (!user::ValidateExistingUser($name ,$email))
-                {
-                $cnn =new mysql(); 
-                $sql = "INSERT INTO users (name,firstname,lastname,email,password)";
-                $sql.= sprintf("values ('%s','%s','%s','%s','%s')", $name,$firstname,$lastname, $email,$passwd);
-                $rst = $cnn->query($sql);
-               
-             
-                if (!$rst){
-                    die('error en consulta');
-                } else {
-                    $user = new user();
-                    $user->id =$cnn->insert_id;
-                    $user->name=$name;
-                    $user->firstname=$firstname;
-                    $user->lastname=$lastname;
-                    $user->email=$email;
-                    $cnn->close();
-                    return $user;
-                }
-             }
-    
-            } 
-            /*
-            * ValidateExistingUser
-            *
-            *param $name string
-            *param $email string
-            *
-            * return bool
-            *true= no permitir crear nuevo usuario
-            *false= permitir crear nuevo usuario (no existe)
-            */
-    
-             private static function ValidateExistingUser($name, $email) {
-                $cnn =new mysql(); 
-                $sql = sprintf("SELECT id FROM users WHERE name= '%s' OR email='%s", $name, $email);
-                $rst = $cnn->query($sql);
-                $cnn->close();
-        
-                if (!$rst) {
-                    die('Error en la consulta');
-    
-                } elseif ($rst->num_rows > 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-    
+public static function create($name,$firstname,$lastname,$email,$passwd) 
+{
+    if (!user::ValidateExistingUser($name ,$email))
+    {
+    $cnn =new mysql(); 
+    $sql = "INSERT INTO users (name,firstname,lastname,email,password)";
+    $sql.= sprintf("values ('%s','%s','%s','%s','%s')", $name,$firstname,$lastname, $email,$passwd);
+    $rst = $cnn->query($sql);
+   
+ 
+    if (!$rst){
+        die('error en consulta');
+    } else {
+        $user = new user();
+        $user->id =$cnn->insert_id;
+        $user->name=$name;
+        $user->firstname=$firstname;
+        $user->lastname=$lastname;
+        $user->email=$email;
+        $cnn->close();
+        return $user;
+    }
+ }
+
+} 
+/*
+* ValidateExistingUser
+*
+*param $name string
+*param $email string
+*
+* return bool
+*true= no permitir crear nuevo usuario
+*false= permitir crear nuevo usuario (no existe)
+*/
+
+ private static function ValidateExistingUser($name, $email) {
+    $cnn =new mysql(); 
+    $sql = sprintf("SELECT id FROM users WHERE name= '%s' OR email='%s", $name, $email);
+    $rst = $cnn->query($sql);
+    $cnn->close();
+
+    if (!$rst) {
+        die('Error en la consulta');
+
+    } elseif ($rst->num_rows > 0) {
+        return true;
+    } else {
+        return false;
+    }
+
              }
     
              public static function Login($name, $passwd) {
