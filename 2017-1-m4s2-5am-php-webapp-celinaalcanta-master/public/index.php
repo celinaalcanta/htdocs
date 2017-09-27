@@ -31,7 +31,6 @@ if(isset($_POST['usuario'])&& isset($_POST['passwd'])){
    
          <label for="usuario">usuario:</label>
          <imput type="text" name ="usuario" id="usuario">
-
          <!-- div> label [for=passwd] {contraseña:}+input[type=password name=passwd id=passwd] -->
          <div>
            <label for="passwd"> contraseña:</label>
