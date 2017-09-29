@@ -101,7 +101,7 @@ public static function create($name,$firstname,$lastname,$email,$passwd)
 *false= permitir crear nuevo usuario (no existe)
 */
 
- private static function ValidateExistingUser($name, $email) {
+private static function ValidateExistingUser($name, $email) {
     $cnn =new mysql(); 
     $sql = sprintf("SELECT id FROM users WHERE name= '%s' OR email='%s", $name, $email);
     $rst = $cnn->query($sql);
