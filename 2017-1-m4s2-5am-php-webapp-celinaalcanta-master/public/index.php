@@ -1,6 +1,5 @@
 <?php
 require '../config.inc.php';
 require '../src/app/autoload.php';
-use Src\Models\User;
+use src\app\Router;
 
-$usuario = new User();
