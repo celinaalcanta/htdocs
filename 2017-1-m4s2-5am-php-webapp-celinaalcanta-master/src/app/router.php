@@ -1,24 +1,35 @@
 <?php
 namespace src\app;
 
-use src\controllers\HomeController;
+
 class Router {
+    private $controller = '';
+    private $action = '';
+    private $param = '';
     // /controller/action/params
-    public static function get($route, $controller, $param = rull) {
-        if (isset($_GET['url'])) {
-            $ctl = preg.split('/[0]/', $controller);
-            $call = $ctl[0].'controlller::'.$ctl[1].'()';
-            call_user_func($call);
-        } else {
-            $url = preg_split('/[\/]/')
-        }
-    }
-
-    public static function post() {
-
-    }
+    // inicial = / ó /home ó /home/index
+    // login = /login
+   public static function get($url) { // $url = 'home'
+       $x = preg_split('/[\/]/',$url);
+       switch(count($x)) {
+          case 3:
+            $this->controller = $x[0];
+            $this->action = $x[1];
+            $this->param =$x[2];
+            break;
+          case 2:
+            $this->controller = $x[0];
+            $this->action = $x[1];
+            break;
+          case 1:
+            $this->controller = $x[0];
+            break;
+       }
+       
+       var_dump($x);
+       return 0;
+   }
+   public static function post($url) {
+       return  0;
+   }
 }
-commit
-rutas controladores
-
-cochinero de codigo
