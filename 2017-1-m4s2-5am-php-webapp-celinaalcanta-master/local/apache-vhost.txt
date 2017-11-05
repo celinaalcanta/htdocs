@@ -1,0 +1,6 @@
+paso número 1 - DNS Local
+  agregar al archivo c:\windows \sistem32\drivers\etc\hosts
+    127.0.0.1
+
+paso número 2 - Configuración global de apache http verificar y/o descomentar en el archivo 
+c:\xampp\apache\conf\httpd.conf la linea que incluye a 
