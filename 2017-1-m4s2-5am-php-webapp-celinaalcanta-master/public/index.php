@@ -10,4 +10,4 @@ require_once '../src/app/autoload.php';
 //} else {
  //  Router::get('home');
 //}
-echo 'Bienvenido a biblioteca-CETis108';
+echo 'Bienvenido a biblioteca-CETis';
