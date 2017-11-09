@@ -84,6 +84,6 @@
 > cuando guardas uno de estos archivos es necesario que reinicie xampp, esto se puede hacer deteniendo y volviendolo a ejecutar
     
 
-##USO DEL PROYECTO 
-- 
+## USO DEL PROYECTO 
+
 Abres el navegador y escribes biblioteca.dev y LISTO! :D
