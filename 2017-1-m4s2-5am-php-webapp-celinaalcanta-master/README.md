@@ -7,7 +7,7 @@
  
 1. PHP -5.6.31 [Descargar] 
   (Http://php.net/download)
-3. elemento 3
+2. Xampp
 > Se recomienda utilizar XAMPP [ir al sitio oficial de XAMPP]
   (http://apachefriends.org)
 
